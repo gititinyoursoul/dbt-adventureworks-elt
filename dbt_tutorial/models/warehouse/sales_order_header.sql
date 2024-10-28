@@ -1,9 +1,9 @@
 SELECT 
-    salesorderid, 
+    salesorderid as salesorder_id, 
     revisionnumber, 
-    orderdate, 
-    duedate, 
-    shipdate, 
+    orderdate as order_date, 
+    duedate as due_date, 
+    shipdate as ship_date, 
     status, 
     onlineorderflag, 
     purchaseordernumber,  
@@ -12,5 +12,5 @@ SELECT
     freight, 
     totaldue, 
     rowguid as row_id,
-    modifieddate
+    modifieddate as modified_date
 FROM {{ source('sales', 'salesorderheader') }}
