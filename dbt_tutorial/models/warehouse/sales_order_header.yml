@@ -4,6 +4,10 @@ version: 2
 models:
   - name: sales_order_header
     description: "Sales Order Header table"
+    data_tests:
+      - greater_than_column:
+          column_name: duedate
+          greater_than_column_name: orderdate
     columns:
       - name: salesorderid
         description: "sales order id"
@@ -43,7 +47,7 @@ models:
       
       - name: row_id
         description: "Row Identifier"
-        tests:
+        data_tests:
           - not_null
           - unique
       
