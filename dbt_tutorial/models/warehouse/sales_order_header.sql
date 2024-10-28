@@ -1,3 +1,5 @@
+{{ config(materialized='ephemeral') }}
+
 SELECT 
     salesorderid as salesorder_id, 
     revisionnumber, 
