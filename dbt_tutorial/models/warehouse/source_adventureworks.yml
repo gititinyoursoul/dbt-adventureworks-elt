@@ -1,0 +1,15 @@
+# defines the source, and the tables which will be referred to in this tutorial
+# any table which needs to be referred to using Jinja constructs need to be defined here
+version: 2
+
+sources:
+  - name: sales
+    database: Adventureworks
+    tables:
+      - name: salesorderheader
+      - name: salesorderdetail
+  
+  - name: production
+    database: Adventureworks
+    tables:
+      - name: product
