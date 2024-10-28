@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: ""
+    columns:
+      - name: salesorder_id
+        data_type: integer
+        description: "sales order id"
+
+      - name: salesorderdetail_id
+        data_type: integer
+        description: "foreign key to sales order detail id"
+
+      - name: revisionnumber
+        data_type: smallint
+        description: "revision number"
+
+      - name: order_date
+        data_type: timestamp without time zone
+        description: ""
+
+      - name: due_date
+        data_type: timestamp without time zone
+        description: ""
+
+      - name: ship_date
+        data_type: timestamp without time zone
+        description: ""
+
+      - name: status
+        data_type: smallint
+        description: ""
+
+      - name: onlineorderflag
+        data_type: boolean
+        description: ""
+
+      - name: purchaseordernumber
+        data_type: character varying
+        description: ""
+
+      - name: subtotal
+        data_type: numeric
+        description: ""
+
+      - name: taxamt
+        data_type: numeric
+        description: ""
+
+      - name: freight
+        data_type: numeric
+        description: ""
+
+      - name: totaldue
+        data_type: numeric
+        description: ""
+
+      - name: carriertrackingnumber
+        data_type: character varying
+        description: ""
+
+      - name: order_qty
+        data_type: smallint
+        description: ""
+
+      - name: product_id
+        data_type: integer
+        description: "Foreign key to product table"
+        data_tests:
+          - relationships:
+              to: ref('dim_product')
+              field: product_id
+
+      - name: specialoffer_id
+        data_type: integer
+        description: ""
+
+      - name: unitprice
+        data_type: numeric
+        description: ""
+
+      - name: unitpricediscount
+        data_type: numeric
+        description: ""
