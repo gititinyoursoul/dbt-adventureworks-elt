@@ -1,0 +1,10 @@
+# env
+.venv/
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# files
+_sandbox.*

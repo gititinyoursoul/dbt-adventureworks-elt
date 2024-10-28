@@ -1,0 +1,5 @@
+dbt-core
+dbt-postgres
+dbt-adapters<1.7.1
+dbt-common<1.11.0
+python-dateutil<2.9
