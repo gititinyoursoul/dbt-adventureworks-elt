@@ -3,4 +3,8 @@ packages:
     version: 1.3.0
   - package: dbt-labs/codegen
     version: 0.12.1
-sha1_hash: 493e9ab9104def0f054ce2ff73599db7667bf8ad
+  - package: calogica/dbt_expectations
+    version: 0.10.4
+  - package: calogica/dbt_date
+    version: 0.10.1
+sha1_hash: d00f04e84fe1dd3a832631f92e5cd6cb040d9503

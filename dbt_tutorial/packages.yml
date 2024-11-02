@@ -1,5 +1,7 @@
 packages:
-  - package: dbt-labs/dbt_utils
+  - package: dbt-labs/dbt_utils ## utility functions
     version: [">=0.8.0", "<2.0.0"]
-  - package: dbt-labs/codegen
-    version: 0.12.1 ## update to latest version here
+  - package: dbt-labs/codegen ## macros to create dbt code
+    version: [">=0.8.0", "<=0.12.1"] 
+  - package: calogica/dbt_expectations ## advanced tests
+    version: [">=0.6.0", "<=0.10.4"]
