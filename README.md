@@ -13,7 +13,28 @@ This article covers basics of getting started with DBT, a powerful tool for tran
 
 ### Learnings
 
-- Setup postgres in a docker container and query the db from your local machine
-- initializing a dbt project, creating first model, tables, views 
-- definine tests
-- checking target for compiled sql code
+- [x] Setup postgres in a docker container and query the db from your local machine
+- [x] using dbt-core to initialze a dbt project:
+- [x] create models
+  - [x] tables
+  - [x] ephemeral tabeles (add config(materialized=’ephemeral’) to model .sql)
+  - [x] views
+- [ ] create documentation & configuration:
+  - [x] source config
+  - [x] model config
+  - [ ] lineages
+- [x] definine singular, generic and custom tests
+- [x] checking target for compiled and run sql code
+- [x] install packages: dbt_expectations, codegen, dbt_utils
+- [ ] write macro to create model.yml
+- [ ] analyses
+- [ ] seeds
+- [ ] snapshots
+
+### Further Reading
+- [ ] [dbt contract](https://docs.getdbt.com/reference/resource-configs/contract?source=post_page-----28e335be5f7e--------------------------------)
+- [ ] [dbt constraint](https://docs.getdbt.com/reference/resource-properties/constraints?source=post_page-----28e335be5f7e--------------------------------)
+- [x] [boost-your-dbt-tests-using-great-expectations-in-dbt](https://zoltanctoth.medium.com/boost-your-dbt-tests-using-great-expectations-in-dbt-1c2d33d53fb3)
+- [x] [down-with-pipeline-debt-introducing-great-expectations](https://medium.com/@expectgreatdata/down-with-pipeline-debt-introducing-great-expectations-862ddc46782a)
+- [ ] [bt-constraints-automatic-primary-keys-unique-keys-and-foreign-keys-for-snowflake](https://medium.com/snowflake/dbt-constraints-automatic-primary-keys-unique-keys-and-foreign-keys-for-snowflake-d78cbfdec2f9)
+- [ ] [running-dbt-with-airflow](https://www.datafold.com/blog/running-dbt-with-airflow?source=post_page-----28e335be5f7e--------------------------------)
