@@ -1,3 +1,11 @@
+{{ config(
+    materialized = 'table',
+    indexes=[
+      {'columns': ['product_id'], 'unique': True}
+    ]
+)}}
+
+
 select 
     productid as product_id,
     name,
@@ -23,5 +31,8 @@ select
     sellenddate as sellend_date,
     discontinueddate as discontinued_date,
     rowguid as rowgu_id,
-    modifieddate as modified_date
-from {{source('production', 'product')}}
+    modifieddate as modified_date,
+    -- FLAGS for analysis
+    color in ('Multi', 'Silver/Black') as flag_color,
+    {{ flag_outliers_iqr('standardcost') }} as flag_standardcost_outliers
+from {{ source('production', 'product') }}

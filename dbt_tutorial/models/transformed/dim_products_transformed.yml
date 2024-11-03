@@ -1,11 +1,12 @@
 version: 2
 
 models:
-  - name: dim_product
+  - name: dim_product_transformed
+    description: ""
     config:
       contract:
         enforced: true
-    description: ""
+
     columns:
       - name: product_id
         data_type: int
@@ -72,6 +73,9 @@ models:
       - name: daystomanufacture
         data_type: integer
         description: ""
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
 
       - name: productline
         data_type: bpchar(2)
@@ -80,6 +84,9 @@ models:
       - name: class
         data_type: bpchar(2)
         description: ""
+        data_tests:
+          - accepted_values: 
+              values: ['L', 'M', 'H']
 
       - name: style
         data_type: bpchar(2)
@@ -112,3 +119,11 @@ models:
       - name: modified_date
         data_type: timestamp without time zone
         description: ""
+        
+      - name: flag_color
+        data_type: boolean
+        description: flags colors ('Multi', 'Silver/Black') for review
+        
+      - name: flag_standardcost_outliers
+        data_type: varchar
+        description: rows with non-null values are flaged as outliers

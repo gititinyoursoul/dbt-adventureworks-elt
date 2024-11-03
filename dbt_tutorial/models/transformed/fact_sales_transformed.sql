@@ -18,6 +18,6 @@ SELECT
     d.specialoffer_id, 
     d.unitprice, 
     d.unitpricediscount
-FROM {{ ref("sales_order_header") }} AS h
-JOIN {{ ref("sales_order_detail") }} AS d
+FROM {{ ref("sales_order_header_transformed") }} AS h
+JOIN {{ ref("sales_order_detail_transformed") }} AS d
 ON h.salesorder_id = d.salesorder_id

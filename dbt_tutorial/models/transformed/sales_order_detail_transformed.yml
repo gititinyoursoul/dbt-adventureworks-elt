@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: sales_order_detail
+  - name: sales_order_detail_transformed
     description: "Intermediate sales order detail table"
     columns:
       - name: salesorder_id
