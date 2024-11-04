@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: sales_order_header_transformed
+  - name: stg_sales__order_headers
     description: "sales order header table"
     data_tests:
       - greater_than_column:

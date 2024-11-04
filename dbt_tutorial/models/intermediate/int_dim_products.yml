@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: dim_product_transformed
-    description: ""
+  - name: int_dim_products
+    description: "intermediate model of 'stg_production__model'}}"
     config:
       contract:
         enforced: true
@@ -11,12 +11,6 @@ models:
       - name: product_id
         data_type: int
         description: ""
-        constraints:
-          - type: not_null
-          - type: primary_key
-        data_tests:
-          - not_null
-          - unique
 
       - name: name
         data_type: varchar
@@ -73,9 +67,6 @@ models:
       - name: daystomanufacture
         data_type: integer
         description: ""
-        data_tests:
-          - dbt_utils.expression_is_true:
-              expression: ">= 0"
 
       - name: productline
         data_type: bpchar(2)
@@ -84,9 +75,6 @@ models:
       - name: class
         data_type: bpchar(2)
         description: ""
-        data_tests:
-          - accepted_values: 
-              values: ['L', 'M', 'H']
 
       - name: style
         data_type: bpchar(2)

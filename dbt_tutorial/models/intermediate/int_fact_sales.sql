@@ -1,3 +1,17 @@
+with sales__order_headers as (
+    
+    select * from {{ ref("stg_sales__order_headers") }}
+    
+),
+
+sales__order_details as (
+    
+    select * from {{ ref("stg_sales__order_details") }}
+    
+),
+
+tables_joined as (
+    
 SELECT 
     h.salesorder_id, 
     d.salesorderdetail_id,
@@ -18,6 +32,11 @@ SELECT
     d.specialoffer_id, 
     d.unitprice, 
     d.unitpricediscount
-FROM {{ ref("sales_order_header_transformed") }} AS h
-JOIN {{ ref("sales_order_detail_transformed") }} AS d
-ON h.salesorder_id = d.salesorder_id
+    
+FROM sales__order_headers AS h
+JOIN sales__order_details AS d
+    ON h.salesorder_id = d.salesorder_id
+
+)
+
+select * from tables_joined

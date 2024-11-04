@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fact_sales_transformed
+  - name: fact_sales
     description: ""
     columns:
       - name: salesorder_id
@@ -69,7 +69,7 @@ models:
         description: "Foreign key to product table"
         data_tests:
           - relationships:
-              to: ref('dim_product_transformed')
+              to: ref('dim_product')
               field: product_id
 
       - name: specialoffer_id

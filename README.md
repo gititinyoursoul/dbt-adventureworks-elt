@@ -48,10 +48,11 @@ This article covers basics of getting started with DBT, a powerful tool for tran
   - [x] `dbt_utils`: For common dbt utility functions
 
 ## Data Workflow Development
-- [ ] **Build a data workflow** from raw to final tables:
-  - [x] **Flag Data**: Implement logic to flag data based on specified conditions in transformed layer
+- [x] **Build a data workflow** from source to final tables:
+  - [x] **Staging layer** to load source data and rename columns
+  - [x] **Intermediate Layer**: transform data and implement logic to flag data based on certain conditions
   - [ ] **Analyze Flagged Data**: Create mechanisms to analyze or report on flagged data
-  - [ ] **Create Final Table**: Filter and include only valid data in the final table
+  - [x] **Warehouse Layer**: Filter flaged data to include only valid data in the final table
 
 ## Advanced Features
 - [ ] **Write a macro**: Automate the creation of `model.yml` files to simplify documentation
@@ -69,5 +70,6 @@ This article covers basics of getting started with DBT, a powerful tool for tran
 - [ ] [dbt constraint](https://docs.getdbt.com/reference/resource-properties/constraints?source=post_page-----28e335be5f7e--------------------------------)
 - [x] [boost-your-dbt-tests-using-great-expectations-in-dbt](https://zoltanctoth.medium.com/boost-your-dbt-tests-using-great-expectations-in-dbt-1c2d33d53fb3)
 - [x] [down-with-pipeline-debt-introducing-great-expectations](https://medium.com/@expectgreatdata/down-with-pipeline-debt-introducing-great-expectations-862ddc46782a)
+- [ ] [dbt-best-practices/how-we-structure](https://docs.getdbt.com/best-practices/how-we-structure/1-guide-overview)
 - [ ] [bt-constraints-automatic-primary-keys-unique-keys-and-foreign-keys-for-snowflake](https://medium.com/snowflake/dbt-constraints-automatic-primary-keys-unique-keys-and-foreign-keys-for-snowflake-d78cbfdec2f9)
 - [ ] [running-dbt-with-airflow](https://www.datafold.com/blog/running-dbt-with-airflow?source=post_page-----28e335be5f7e--------------------------------)

@@ -1,0 +1,115 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "final model of int_dim_products"
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: product_id
+        data_type: int
+        description: ""
+        constraints:
+          - type: not_null
+          - type: primary_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: name
+        data_type: varchar
+        description: ""
+
+      - name: productnumber
+        data_type: varchar
+        description: ""
+
+      - name: makeflag
+        data_type: boolean
+        description: ""
+
+      - name: finishedgoodsflag
+        data_type: boolean
+        description: ""
+
+      - name: color
+        data_type: character varying
+        description: ""
+
+      - name: safetystocklevel
+        data_type: smallint
+        description: ""
+
+      - name: reorderpoint
+        data_type: smallint
+        description: ""
+
+      - name: standardcost
+        data_type: numeric(8,2)
+        description: ""
+
+      - name: listprice
+        data_type: numeric(8,2)
+        description: ""
+
+      - name: size
+        data_type: varchar
+        description: ""
+
+      - name: sizeunitmeasurecode
+        data_type: varchar
+        description: ""
+
+      - name: weightunitmeasurecode
+        data_type: varchar
+        description: ""
+
+      - name: weight
+        data_type: numeric(8,2)
+        description: ""
+
+      - name: daystomanufacture
+        data_type: integer
+        description: ""
+
+      - name: productline
+        data_type: bpchar(2)
+        description: ""
+
+      - name: class
+        data_type: bpchar(2)
+        description: ""
+
+      - name: style
+        data_type: bpchar(2)
+        description: ""
+
+      - name: productsubcategory_id
+        data_type: integer
+        description: ""
+
+      - name: productmodel_id
+        data_type: integer
+        description: ""
+
+      - name: sellstart_date
+        data_type: timestamp without time zone
+        description: ""
+
+      - name: sellend_date
+        data_type: timestamp without time zone
+        description: ""
+
+      - name: discontinued_date
+        data_type: timestamp without time zone
+        description: ""
+
+      - name: rowgu_id
+        data_type: uuid
+        description: ""
+
+      - name: modified_date
+        data_type: timestamp without time zone
+        description: ""

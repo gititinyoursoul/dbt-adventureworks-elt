@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: sales_order_detail_transformed
-    description: "Intermediate sales order detail table"
+  - name: stg_sales__order_details
+    description: "Staging sales order detail table"
     columns:
       - name: salesorder_id
         description: "sales order id"
