@@ -1,4 +1,4 @@
-{% macro flag_outliers_iqr(column) %}
+{% macro flag_outliers_iqr(model, column) %}
 (
 SELECT
     CASE
@@ -13,7 +13,7 @@ FROM (
         (percentile_cont(0.75) WITHIN GROUP (ORDER BY {{ column }}) -
             percentile_cont(0.25) WITHIN GROUP (ORDER BY {{ column }})) AS iqr
     FROM
-        {{ this }}
+        {{ model }}
         )
 )
 {% endmacro %}
