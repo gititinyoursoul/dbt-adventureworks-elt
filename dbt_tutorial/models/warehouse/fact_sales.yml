@@ -69,7 +69,7 @@ models:
         description: "Foreign key to product table"
         data_tests:
           - relationships:
-              to: ref('dim_product')
+              to: ref('dim_products')
               field: product_id
 
       - name: specialoffer_id

@@ -1,4 +1,4 @@
 SELECT due_date, order_date, count(1) as occurrences
-FROM {{ ref('sales_order_header_transformed') }}
+FROM {{ ref('stg_sales__order_headers') }}
 WHERE due_date < order_date
 GROUP BY due_date, order_date
