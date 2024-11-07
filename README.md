@@ -15,44 +15,41 @@ This article covers basics of getting started with DBT, a powerful tool for tran
 
 ## Container Setup
 - [x] **Set up PostgreSQL in a container** and verify you can query the database from your local machine
-- [ ] **Set up dbt in a container** dbt container on the same network
-- [ ] **Configure `profiles.yml`** to connect dbt to the PostgreSQL database
-- [ ] **Create a `docker-compose.yml`** file to manage both containers
+- [x] **Set up dbt in a container** dbt container on the same network
+- [x] **Configure `profiles.yml`** to connect dbt to the PostgreSQL database
+- [x] **Create a `docker-compose.yml`** file to manage both containers
 
 ## dbt Project Initialization
 - [x] **Use dbt-core** to initialize a new dbt project
-- [x] **Create models**:
-  - [x] **Tables**: Define tables using `materialized='table'` config
-  - [x] **Ephemeral Tables**: Use `config(materialized='ephemeral')` for models that shouldn’t be materialized as tables or views
-  - [ ] **Views**: Define views using `materialized='view'` config
+- [x] **Tables**: Define tables using `materialized='table'` config
+- [x] **Ephemeral Tables**: Use `config(materialized='ephemeral')` for models that shouldn’t be materialized as tables or views
+- [x] **Views**: Define views using `materialized='view'` config
+- [ ] **Incremental**
 
 ## Documentation & Configuration
-- [ ] **Create documentation**:
-  - [x] **Source Configuration**: Define your data sources in `sources` to track dependencies
-  - [x] **Model Configuration**: Add metadata, descriptions, and tags to your models in `schema.yml`
-  - [ ] **Lineage Diagrams**: Ensure all models have lineage defined for clear data flow visualization
+- [x] **Source Configuration**: Define your data sources in `sources` to track dependencies
+- [x] **Model Configuration**: Add metadata, descriptions, and tags to your models in `schema.yml`
+- [ ] **Lineage Diagrams**: Ensure all models have lineage defined for clear data flow visualization
 
 ## Testing & Quality Checks
-- [x] **Define Tests**:
-  - [x] **Singular Tests**: Custom tests defined in the `tests/` directory
-  - [x] **Generic Tests**: Use dbt’s built-in tests or custom generic tests in `tests/generic/`
-  - [ ] **Custom Tests**: Write your own data quality tests to ensure integrity
+- [x] **Singular Tests**: Custom tests defined in the `tests/` directory
+- [x] **Generic Tests**: Use dbt’s built-in tests or custom generic tests in `tests/generic/`
+- [ ] **Custom Tests**: Write your own data quality tests to ensure integrity
 
 ## Compilation & Execution
 - [x] **Verify the target directory**: Check the `target` folder for compiled and executed SQL code to understand what dbt runs
 
 ## Package Management
-- [x] **Install useful dbt packages**:
-  - [x] `dbt_expectations`: For advanced data testing
-  - [x] `codegen`: To automate code generation
-  - [x] `dbt_utils`: For common dbt utility functions
+- [x] `dbt_expectations`: For advanced data testing
+- [x] `codegen`: To automate code generation
+- [x] `dbt_utils`: For common dbt utility functions
 
 ## Data Workflow Development
-- [x] **Build a data workflow** from source to final tables:
-  - [x] **Staging layer** to load source data and rename columns
-  - [x] **Intermediate Layer**: transform data and implement logic to flag data based on certain conditions
-  - [ ] **Analyze Flagged Data**: Create mechanisms to analyze or report on flagged data
-  - [x] **Warehouse Layer**: Filter flaged data to include only valid data in the final table
+Build a data workflow from source to final tables:
+- [x] **Staging layer** to load source data and rename columns
+- [x] **Intermediate Layer**: transform data and implement logic to flag data based on certain conditions
+- [ ] **Analyze Flagged Data**: Create mechanisms to analyze or report on flagged data
+- [x] **Warehouse Layer**: Filter flaged data to include only valid data in the final table
 
 ## Advanced Features
 - [ ] **Write a macro**: Automate the creation of `model.yml` files to simplify documentation
@@ -70,6 +67,6 @@ This article covers basics of getting started with DBT, a powerful tool for tran
 - [ ] [dbt constraint](https://docs.getdbt.com/reference/resource-properties/constraints?source=post_page-----28e335be5f7e--------------------------------)
 - [x] [boost-your-dbt-tests-using-great-expectations-in-dbt](https://zoltanctoth.medium.com/boost-your-dbt-tests-using-great-expectations-in-dbt-1c2d33d53fb3)
 - [x] [down-with-pipeline-debt-introducing-great-expectations](https://medium.com/@expectgreatdata/down-with-pipeline-debt-introducing-great-expectations-862ddc46782a)
-- [ ] [dbt-best-practices/how-we-structure](https://docs.getdbt.com/best-practices/how-we-structure/1-guide-overview)
+- [x] [dbt-best-practices/how-we-structure](https://docs.getdbt.com/best-practices/how-we-structure/1-guide-overview)
 - [ ] [bt-constraints-automatic-primary-keys-unique-keys-and-foreign-keys-for-snowflake](https://medium.com/snowflake/dbt-constraints-automatic-primary-keys-unique-keys-and-foreign-keys-for-snowflake-d78cbfdec2f9)
 - [ ] [running-dbt-with-airflow](https://www.datafold.com/blog/running-dbt-with-airflow?source=post_page-----28e335be5f7e--------------------------------)
