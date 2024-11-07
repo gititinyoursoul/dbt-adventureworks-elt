@@ -1,0 +1,36 @@
+services:
+  postgres:
+    build: ./postgres  # Path to postgres Dockerfile
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - '5432:5432' # Map host port 5432 to container port 5432
+    networks:
+      - db_network
+      
+  dbt:
+    build: ./dbt_tutorial  # Path to DBT Dockerfile and project files
+    container_name: dbt_container
+    environment:
+      # Pass PostgreSQL connection details to DBT container
+      DBT_USER: ${DBT_USER}
+      DBT_PASSWORD: ${DBT_PASSWORD}
+      DBT_DB: ${DBT_DB}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+    volumes:
+      - ./dbt_tutorial:/dbt       # Mount your DBT project files
+      - ./dbt_tutorial/profiles.yml:/root/.dbt/profiles.yml  # Mount profiles.yml to the correct location
+    working_dir: /dbt
+    
+    networks:
+      - db_network
+    depends_on:
+      - postgres  # ocker Compose will start the postgres container first
+    entrypoint: ["dbt", "run"]
+      
+networks:
+  db_network:
+    driver: bridge

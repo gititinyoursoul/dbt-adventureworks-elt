@@ -1,10 +1,12 @@
 # env
 .venv/
+.env
 
 # dbt
 target/
 dbt_packages/
 logs/
+.user.yml
 
 # files
 _sandbox.*
