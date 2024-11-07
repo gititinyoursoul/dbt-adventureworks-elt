@@ -1,0 +1,12 @@
+dbt_profile:
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: 5432
+      user: "{{ env_var('DBT_USER') }}"   
+      pass: "{{ env_var('DBT_PASSWORD') }}" 
+      dbname: "{{ env_var('DBT_DB') }}" 
+      schema: warehouse
+  target: dev

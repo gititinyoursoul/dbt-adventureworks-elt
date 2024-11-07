@@ -1,13 +1,12 @@
 Welcome to your new dbt project!
 
-### Using the starter project
+### dbt commands
 
-Common dbt commands:
 - dbt docker-compose up -d
 - dbt run --full-refresh
 - dbt test
 - dbt build (dbt run & dbt test)
-- dvt clean
+- dbt clean
 - dbt deps (install packages)
 
 

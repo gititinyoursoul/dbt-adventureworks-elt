@@ -1,0 +1,17 @@
+# Exclude all log files
+*.log
+
+# Exclude a specific file (e.g., README)
+README.md
+
+# Exclude local configuration files
+.env
+*.env
+*.json
+
+# Exclude the Dockerfile itself (if you don't want to copy it into the container)
+Dockerfile
+
+# Exclude any other temporary or build files
+tmp/
+build/
