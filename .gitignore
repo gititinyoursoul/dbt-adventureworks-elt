@@ -2,6 +2,9 @@
 .venv/
 .env
 
+# vscode
+.vscode
+
 # dbt
 target/
 dbt_packages/
