@@ -1,4 +1,4 @@
-dbt_profile:
+dbt_adventureworks_profile:
   outputs:
     dev:
       type: postgres
