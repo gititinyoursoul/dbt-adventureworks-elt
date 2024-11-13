@@ -10,3 +10,16 @@ dbt_adventureworks_profile:
       dbname: "{{ env_var('DBT_DB') }}" 
       schema: warehouse
   target: dev
+  
+dbt_adventureworks_local:
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: 'localhost'
+      port: 5432
+      user: "{{ env_var('DBT_USER') }}"   
+      pass: "{{ env_var('DBT_PASSWORD') }}" 
+      dbname: "{{ env_var('DBT_DB') }}" 
+      schema: warehouse
+  target: dev

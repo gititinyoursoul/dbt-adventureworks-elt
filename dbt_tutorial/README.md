@@ -2,12 +2,16 @@ Welcome to your new dbt project!
 
 ### dbt commands
 
-- dbt docker-compose up -d
 - dbt run --full-refresh
 - dbt test
 - dbt build (dbt run & dbt test)
 - dbt clean
 - dbt deps (install packages)
+- dbt debug (to check the configuration and connection setup)
+
+run with dbt_adventureworks_local (localhost):
+- dbt run --full-refresh --profile dbt_adventureworks_local
+- dbt test --profile dbt_adventureworks_local 
 
 
 ### Resources
