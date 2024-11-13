@@ -15,6 +15,19 @@ transformed as (
       
   from products p
   
-  )
+  ),
   
-select * from transformed 
+filtered_flagged_rows as (
+  
+  select * 
+  
+  from transformed 
+  
+  where       
+  -- exclude FLAGS
+  flag_color is not True
+  and flag_standardcost_outliers IS NULL
+
+)
+
+select * from filtered_flagged_rows
