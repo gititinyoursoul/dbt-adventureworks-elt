@@ -36,7 +36,7 @@ models:
     staging:
       +materialized: view
     intermediate:
-      +materialized: ephemeral
+      +materialized: view
     warehouse:
       +materialized: table
       +persist_docs:
