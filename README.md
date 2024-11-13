@@ -11,25 +11,29 @@ This article covers basics of getting started with DBT, a powerful tool for tran
 - **Building Data Transformations**: A guide to creating models, writing SQL-based transformations, and organizing your DBT project structure.
 - **Testing and Documentation**: Learn how to test your transformations and document your data models for clarity and better collaboration.
 
+# docker commands
+
+- dbt docker-compose up -d
+
 # Learnings
 
 ## Container Setup
 - [x] **Set up PostgreSQL in a container** and verify you can query the database from your local machine
-- [x] **Set up dbt in a container** dbt container on the same network
+- [x] **Set up dbt in a container** on the same network
 - [x] **Configure `profiles.yml`** to connect dbt to the PostgreSQL database
 - [x] **Create a `docker-compose.yml`** file to manage both containers
 
 ## dbt Project Initialization
-- [x] **Use dbt-core** to initialize a new dbt project
+- [x] **Use dbt-core** to initialize a dbt project
 - [x] **Tables**: Define tables using `materialized='table'` config
-- [x] **Ephemeral Tables**: Use `config(materialized='ephemeral')` for models that shouldn’t be materialized as tables or views
+- [x] **Ephemeral Tables**: Use `config(materialized='ephemeral')` for models that shouldn’t be materialized as tables or views. dbt macro operations cannot run in ephemeral models.
 - [x] **Views**: Define views using `materialized='view'` config
 - [ ] **Incremental**
 
 ## Documentation & Configuration
 - [x] **Source Configuration**: Define your data sources in `sources` to track dependencies
 - [x] **Model Configuration**: Add metadata, descriptions, and tags to your models in `schema.yml`
-- [ ] **Lineage Diagrams**: Ensure all models have lineage defined for clear data flow visualization
+- [x] **Lineage Diagrams**: Ensure all models have lineage defined for clear data flow visualization
 
 ## Testing & Quality Checks
 - [x] **Singular Tests**: Custom tests defined in the `tests/` directory
@@ -48,11 +52,10 @@ This article covers basics of getting started with DBT, a powerful tool for tran
 Build a data workflow from source to final tables:
 - [x] **Staging layer** to load source data and rename columns
 - [x] **Intermediate Layer**: transform data and implement logic to flag data based on certain conditions
-- [ ] **Analyze Flagged Data**: Create mechanisms to analyze or report on flagged data
+- [x] **Analyze Flagged Data**: Create mechanisms to analyze or report on flagged data
 - [x] **Warehouse Layer**: Filter flaged data to include only valid data in the final table
 
 ## Advanced Features
-- [ ] **Write a macro**: Automate the creation of `model.yml` files to simplify documentation
 - [x] **Write custom macro**: Flag outliers based on IQR in `detect_outliers.sql`
 - [ ] **Perform Analyses**: Use dbt’s `analyses/` folder to write and run SQL analyses
 - [ ] **Create Seeds**: Load CSV files into your warehouse as tables using dbt’s seeding functionality
