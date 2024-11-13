@@ -28,8 +28,8 @@ services:
     networks:
       - db_network
     depends_on:
-      - postgres  # ocker Compose will start the postgres container first
-    entrypoint: ["dbt", "run"]
+      - postgres  # docker Compose will start the postgres container first
+    entrypoint: ["sh", "-c", "dbt clean && dbt run && tail -f /dev/null"] #["dbt", "run"]
       
 networks:
   db_network:
