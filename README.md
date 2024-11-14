@@ -4,9 +4,23 @@ This project demonstrates the setup and development of a ELT pipeline using DBT 
 
 Throughout the project, I utilized DBT's built-in tests as well as custom data quality checks, ensuring reliable and consistent data outputs. Additional features include custom macros for outlier detection and performance optimizations through index creation. I also worked with popular DBT packages like dbt_utils and dbt_expectations to streamline functionality and ensure advanced data testing.
 
-# docker commands
+## docker commands
 
-- dbt docker-compose up -d
+- docker-compose build --no-cache 
+- docker-compose up -d
+
+## dbt commands
+
+- dbt run --full-refresh
+- dbt test
+- dbt build (dbt run & dbt test)
+- dbt clean
+- dbt deps (install packages)
+- dbt debug (to check the configuration and connection setup)
+
+run with dbt_adventureworks_local (localhost):
+- dbt run --full-refresh --profile dbt_adventureworks_local
+- dbt test --profile dbt_adventureworks_local 
 
 # Learnings
 

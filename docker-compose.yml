@@ -12,7 +12,7 @@ services:
       - db_network
       
   dbt:
-    build: ./dbt_tutorial  # Path to DBT Dockerfile and project files
+    build: ./dbt  # Path to DBT Dockerfile and project files
     container_name: dbt_container
     environment:
       # Pass PostgreSQL connection details to DBT container
@@ -21,8 +21,8 @@ services:
       DBT_DB: ${DBT_DB}
       POSTGRES_HOST: ${POSTGRES_HOST}
     volumes:
-      - ./dbt_tutorial:/dbt       # Mount your DBT project files
-      - ./dbt_tutorial/profiles.yml:/root/.dbt/profiles.yml  # Mount profiles.yml to the correct location
+      - ./dbt:/dbt       # Mount your DBT project files
+      - ./dbt/profiles.yml:/root/.dbt/profiles.yml  # Mount profiles.yml to the correct location
     working_dir: /dbt
     
     networks:
